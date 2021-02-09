@@ -1,7 +1,9 @@
 let shareBtn = document.querySelector('.share');
+let icons = document.querySelector('.buttons');
 
-function showIcons() {
+shareBtn.addEventListener('click', () => {
     shareBtn.classList.toggle('active');
-}
+    icons.classList.toggle('active');
+});
 
-shareBtn.addEventListener('click', showIcons);
+
