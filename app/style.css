@@ -34,7 +34,6 @@ footer {
 .image {
 	width: 50%;
 	height: 100%;
-	float: left;
 	position: relative;
 	display: flex;
 }
@@ -43,21 +42,28 @@ footer {
 	height: 300px;
 	width: 100%;
 	position: absolute;
-	clip: rect(0, 338px, 319px, 0);
+	z-index: 0;
 	border-top-left-radius: 10px;
 	border-bottom-left-radius: 10px;
+	clip: rect(0, 338px, 319px, 0);
 }
 
 .text {
 	width: 50%;
-	float: right;
-	padding: 10px 10px 10px 5px;
+	padding-left: 5px;
 	position: relative;
 	right: 35px;
+	display: flex;
+	flex-direction: column;
+	z-index: 2;
+	background-color: #fff;
+	height: 100%;
 }
 
-.heading {
-	font-size: 23px;
+.text .heading {
+	margin: 15px 0;
+	padding-top: 20px;
+	font-size: 20px;
 	color: hsl(217, 19%, 35%);
 	font-weight: bold;
 }
@@ -65,12 +71,13 @@ footer {
 .text .par {
 	color: hsl(214, 17%, 51%);
 	line-height: 165%;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 }
 
-p.footer {
+.text .footer {
 	position: relative;
 	right: -50px;
+	bottom: 24px;
 }
 
 .text .name {
@@ -184,5 +191,19 @@ div .buttons.active {
 
 	div .buttons {
 		right: -20px;
+	}
+}
+
+@media (max-width: 480px) {
+	.image img {
+		flex-direction: column;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	.text {
+		flex-direction: column;
+		align-items: center;
+		flex-wrap: wrap;
 	}
 }
